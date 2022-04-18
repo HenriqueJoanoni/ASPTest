@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php
+
+if (php_sapi_name() !== 'cli') {
+    exit;
+}
+
+require __DIR__.'/vendor/autoload.php';
+
+use ASPTest\ManageUser;
+
+$createUser = new ManageUser();
+
+if ($argv[1] == 'USER:CREATE') {
+    $createUser->createUser();
+}
+
+if ($argv[1] == 'USER:CREATE-PWD') {
+    $createUser->updatePassword();
+}
+
