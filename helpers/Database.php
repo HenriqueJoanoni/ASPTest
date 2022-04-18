@@ -12,7 +12,7 @@ class Database
     public static function getInstance()
     {
         if (!isset(self::$_pdo)) {
-            self::$_pdo = new \PDO("mysql:host=127.0.0.1;dbname=asptest", "root", "SimpleS_root2019@");
+            self::$_pdo = new \PDO("mysql:host=127.0.0.1;dbname=", "", "");
         }
         return self::$_pdo;
     }
